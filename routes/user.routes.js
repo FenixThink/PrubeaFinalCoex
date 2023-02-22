@@ -8,9 +8,7 @@ const userController = new UserController();
 router.get('/', userController.index)
 router.get('/:id', userController.show)
 router.post('/', userController.create)
-
-
-
+router.delete('/:id', userController.destroy)
 
 
 export default router;
