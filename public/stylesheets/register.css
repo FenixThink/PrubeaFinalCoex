@@ -1,0 +1,46 @@
+.title {
+    text-align: center;
+}
+
+.Main {
+    background-color: rgba(129, 122, 112, 0.733);
+    width: 80%;
+    height: 75vh;
+    margin: auto;
+}
+
+.parent {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: 1fr;
+    grid-column-gap: 10px;
+    grid-row-gap: 0px;
+    text-align: center;
+}
+
+.inputs {
+    display: block;
+    margin: auto;
+    margin-top: 25px;
+    height: 35px;
+    border-radius: 10px;
+    border: black solid 1px;
+}
+
+.part {
+    margin-top: 125px;
+}
+
+.sendInformation {
+    margin-top: 75px;
+    color:red; 
+    background-color: rgb(55, 160, 230);
+    height: 50px;
+    width: 150px;
+    border-radius: 5px;
+    border: rgb(55, 160, 230) solid 1px;
+}
+.button{
+    text-align: center;
+
+}

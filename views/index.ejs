@@ -1,11 +1,52 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title><%= title %></title>
+    <title>Home</title>
     <link rel='stylesheet' href='/stylesheets/style.css' />
   </head>
   <body>
-    <h1><%= title %></h1>
-    <p>Welcome to <%= title %></p>
+    <div id="app">
+      <div class="mainContainer">
+        <div class="superior">
+          <h1>Usuarios</h1>
+        </div>
+        <div class="cuerpo">
+          <table class="table">
+            <thead>
+              <tr>
+                <th>Id</th>
+                <th>Nombre</th>
+                <th>Correo Electronico</th>
+                <th>Edad</th>
+                <th>Opciones</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>1</td>
+                <td>Bryan</td>
+                <td>bryan@gmail.com</td>
+                <td>18</td>
+                <td class="options"><button class="update">Actualizar</button> <button class="delete">Eliminar</button></td>
+              </tr>
+              <tr>
+                <td>2</td>
+                <td>Juan</td>
+                <td>juan@gmail.com</td>
+                <td>29</td>
+                <td class="options"><button class="update">Actualizar</button> <button class="delete">Eliminar</button></td>
+              </tr>
+              <tr>
+                <td>3</td>
+                <td>Pau</td>
+                <td>MPau@gmail.com</td>
+                <td>20</td>
+                <td class="options"><button class="update">Actualizar</button> <button class="delete">Eliminar</button></td>
+              </tr>
+            </tbody>
+          </table>  
+        </div>
+      </div>
+    </div>    
   </body>
 </html>
