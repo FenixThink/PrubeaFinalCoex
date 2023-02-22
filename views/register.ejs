@@ -84,7 +84,16 @@
             }
             
             if (flag1 && flag2 && flag3){ 
-               //fetch
+                const infoSave = {name:nombre.value,email:email.value,age:edad.value}
+                fetch('/users/',{
+                    method:'post',
+                    headers:{
+                        "Content-type":'application/json'
+                    },
+                    body: JSON.stringify(infoSave)
+                })
+                alert('Created successfully')
+                location = "/"
             }else {
                 alert("Completa todos los campos")
             }

@@ -60,9 +60,14 @@
       template.innerHTML  += endPart
     const deleteButtons = document.querySelectorAll(".delete")
     deleteButtons.forEach(element => {
-      element.addEventListener("click",(e)=>{
-        console.log(e.target.id);
+      element.addEventListener("click",async(e)=>{
+
+        //console.log(e.target.id);
+
         if(confirm('Do you want to delete this person?')){
+            await fetch(`/users/${e.target.id}`,{
+            method: 'delete'
+        });
           location = "/"
         }
 

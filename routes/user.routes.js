@@ -5,10 +5,10 @@ const routerUser = Router()
 const userController = new UserController();
 
 // router.get('/', (req, res) => res.send('Holis'));
-router.get('/', userController.index)
-router.get('/:id', userController.show)
-router.post('/', userController.create)
-router.delete('/:id', userController.destroy)
+routerUser.get('/', userController.index)
+routerUser.get('/:id', userController.show)
+routerUser.post('/', userController.create)
+routerUser.delete('/:id', userController.destroy)
 
 
 export default routerUser;
