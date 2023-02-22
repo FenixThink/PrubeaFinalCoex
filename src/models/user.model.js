@@ -69,6 +69,20 @@ class UserModel {
     return (user)
   }
 
+  static update = async (id,name, email, age) => {
+
+    const query = (`UPDATE users SET name = '${name}', email = '${email}', age = '${age}' WHERE users. id = ${id}`)
+    const result = await User.sequelize.query(query,{raw:true})
+    return result;
+    // console.log(id)
+    // const user = await User.update({
+    //   name : name,
+    //   email : email,
+    //   age : age
+    // },{ where: { _id: id }} )
+    // return (user)
+  }
+
   static deleteById = async (id) => {
     try {
       const user = await User.destroy({

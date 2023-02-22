@@ -9,6 +9,8 @@ routerUser.get('/', userController.index)
 routerUser.get('/:id', userController.show)
 routerUser.post('/', userController.create)
 routerUser.delete('/:id', userController.destroy)
+routerUser.put('/:id', userController.update)
+routerUser.delete('/:id', userController.destroy)
 
 
 export default routerUser;
