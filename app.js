@@ -7,7 +7,7 @@ import morgan from 'morgan';
 
 
 import router from './routes/index.routes.js'
-// import usersRouter from './routes/users.js'
+import routerUser from './routes/user.routes.js'
 
 const __filename = fileURLToPath (import.meta.url)
 const __dirname = dirname(__filename)
@@ -23,8 +23,8 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
-app.use('/', indexRoutes);
-app.use('/users', usersRoutes);
+app.use('/', router);
+app.use('/users', routerUser);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

@@ -4,7 +4,7 @@ class UserController{
 
   index = async (req, res) => {
     try {
-      const response = await UserModel.getAll();     
+      const response = await UserModel.findAll();     
       res.send(response);
     } catch (error) {
       console.error(error);
