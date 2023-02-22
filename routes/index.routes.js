@@ -12,5 +12,8 @@ router.get('/', function(req, res, next) {
   router.get('/home', function(req, res, next) {
     res.render('home');
   });
+  router.get('/update', function(req, res, next) {
+    res.render('update');
+  });
   
   export default router

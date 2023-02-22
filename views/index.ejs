@@ -59,6 +59,17 @@
 
       template.innerHTML  += endPart
     const deleteButtons = document.querySelectorAll(".delete")
+    const updateButtons = document.querySelectorAll(".update")
+    updateButtons.forEach(element => {
+      element.addEventListener("click",async(e)=>{
+        let id = e.target.id
+          location = "./update"
+          localStorage.setItem('id',id)
+      })
+    });
+        //console.log(infoemails);
+  
+    
     deleteButtons.forEach(element => {
       element.addEventListener("click",async(e)=>{
 
