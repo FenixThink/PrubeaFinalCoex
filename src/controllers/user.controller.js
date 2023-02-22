@@ -31,7 +31,7 @@ class UserController{
     try {
       const {name,email,age} = req.body;
       const response = await UserModel.create(name,email,age);    
-      res.send(response);
+      return res.status(202).json({'message': 'Created successfully'});
     } catch (error) {
       console.error(error);
       res.status(500).json({
@@ -52,17 +52,18 @@ class UserController{
   //   }
   // }
 
-  // delete = async (req, res) => {
-  //   try {
-  //     const response = await UserModel.getAll();     
-  //     res.send(response);
-  //   } catch (error) {
-  //     console.error(error);
-  //     res.status(500).json({
-  //       message: error
-  //     });
-  //   }
-  // }
+  destroy = async (req, res) => {
+    try {
+      const id = req.params.id;
+      const response = await UserModel.deleteById(id);
+      return res.status(202).json({'message': 'Deleted successfully'});
+    } catch (error) {
+      console.error(error);
+      res.status(500).json({
+        message: error
+      });
+    }
+  }
 }
 
 export default UserController
