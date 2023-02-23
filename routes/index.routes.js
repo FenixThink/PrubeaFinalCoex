@@ -1,8 +1,8 @@
 import { Router } from 'express'
 const router = Router();
 
-router.get('/', function(req, res, next) {
-    res.render('index');
+router.get('/list', function(req, res, next) {
+    res.render('list');
   });
   
   router.get('/register', function(req, res, next) {
@@ -14,6 +14,10 @@ router.get('/', function(req, res, next) {
   });
   router.get('/update', function(req, res, next) {
     res.render('update');
+  });
+
+  router.get('/', function(req, res, next) {
+    res.render('index');
   });
   
   export default router
