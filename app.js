@@ -4,9 +4,10 @@ import cookieParser from 'cookie-parser'
 import { fileURLToPath } from 'url';
 import path,{ dirname } from 'path';
 import morgan from 'morgan';
-import usersRoutes from './routes/user.routes.js'
-import indexRoutes from './routes/index.routes.js'
-// import usersRouter from './routes/users.js'
+
+
+import router from './routes/index.routes.js'
+import routerUser from './routes/user.routes.js'
 
 const __filename = fileURLToPath (import.meta.url)
 const __dirname = dirname(__filename)
@@ -22,8 +23,8 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
-app.use('/', indexRoutes);
-app.use('/users', usersRoutes);
+app.use('/', router);
+app.use('/users', routerUser);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

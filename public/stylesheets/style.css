@@ -6,3 +6,95 @@ body {
 a {
   color: #00B7FF;
 }
+.table {
+  width: 100%;
+  background-color: #f09999;
+  border-collapse: collapse;
+  border-width: 3px;
+  border-color: #8f7305;
+  border-style: solid;
+  color: #e11414;
+}
+
+.table td,
+.table th {
+  border-width: 3px;
+  border-color: #8f7305;
+  border-style: solid;
+  padding: 5px;
+  text-align: center;
+}
+
+.table thead {
+  background-color: #212121;
+}
+.update {
+  background-color: rgb(55, 160, 230);
+  height: 35px;
+  width: 100px;
+  border-radius: 5px;
+  border: rgb(55, 160, 230) solid 1px;
+}
+.delete {
+  background-color: rgb(233, 67, 67);
+  height: 35px;
+  width: 100px;
+  border-radius: 5px;
+  border: rgb(233, 67, 67) solid 1px;
+}
+.options {
+  width: 450px;
+}
+h1 {
+  text-align: center;
+  font-weight: bolder;
+  font-weight: bolder;
+}
+
+
+
+.title {
+  text-align: center;
+}
+
+.Main {
+  background-color: rgba(129, 122, 112, 0.733);
+  width: 80%;
+  height: 75vh;
+  margin: auto;
+}
+
+.parent {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: 1fr;
+  grid-column-gap: 10px;
+  grid-row-gap: 0px;
+  text-align: center;
+}
+
+.inputs {
+  display: block;
+  margin: auto;
+  margin-top: 25px;
+  height: 35px;
+  border-radius: 10px;
+  border: black solid 1px;
+}
+
+.part {
+  margin-top: 125px;
+}
+
+.sendInformation {
+  margin-top: 75px;
+  background-color: rgb(55, 160, 230);
+  height: 50px;
+  width: 150px;
+  border-radius: 5px;
+  border: rgb(55, 160, 230) solid 1px;
+}
+.button{
+  text-align: center;
+
+}
