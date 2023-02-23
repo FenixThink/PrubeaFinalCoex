@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html>
 
-    <head>
-        <title>Register</title>
-        <link rel='stylesheet' href='/stylesheets/style.css' />
+<head>
+    <title>Register</title>
+        <link rel='stylesheet' href='/stylesheets/register.css' />
 </head>
 
 <body>
@@ -16,25 +16,34 @@
                 <form method="post">
                     <div class="parent">
                         <div class="part">
-                            <label for="name">Ingrese su nombre:</label>
-                            <input placeholder="Juan, Maria, Johan" type="text" id="name" required class="inputs">
-                            <p id="nombre" style="color:red; display:none">Completa el campo Nombre</p>
+                            <label class="label" for="name">Ingrese su nombre:</label>
+                            <input class="input" placeholder="Juan, Maria, Johan" type="text" id="name" required
+                                class="inputs">
+                            <p id="nombre" style="color:#4cc9f0; display:none; font-size: 14px;">Completa el campo
+                                Nombre</p>
                         </div>
                         <div class="part">
-                            <label for="email">Ingrese su Correo Electronico:</label>
-                            <input placeholder="correo@correo.com" type="email" id="email" required class="inputs">   
-                            <p id="correo" style="color:red; display:none">Completa el campo Email</p>
+                            <label class="label" for="email">Ingrese su Correo Electronico:</label>
+                            <input class="input" placeholder="correo@correo.com" type="email" id="email" required
+                                class="inputs">
+                            <p id="correo" style="color:#4cc9f0; display:none; font-size: 14px;">Completa el campo Email
+                            </p>
                         </div>
                         <div class="part">
-                            <label for="edad">Ingrese su edad:</label>
-                            <input placeholder="18" type="number" id="edad" required class="inputs">
-                            <p id="edadcita" style="color:red; display:none">Completa el campo Edad</p>
+                            <label class="label" for="edad">Ingrese su edad:</label>
+                            <input class="input" placeholder="18" type="number" id="edad" required class="inputs">
+                            <p id="edadcita" style="color:#4cc9f0; display:none; font-size: 14px;">Completa el campo
+                                Edad</p>
                         </div>
                     </div>
                     <div class="button">
                         <button type="submit" class="sendInformation">Guardar</button>
                     </div>
                 </form>
+                <div class="footer-links">
+                    <a href="/list">Ver usuarios</a>
+                    <a href="/">Volver al inicio</a>
+                </div>
             </div>
         </div>
     </div>
@@ -58,7 +67,7 @@
                 nombre.style.borderColor = "red";
                 nombrecito.style.display = 'block';
                 flag1 = false;
-            }else{
+            } else {
                 nombre.style.borderColor = "green";
                 nombrecito.style.display = 'none';
                 flag1 = true;
@@ -82,7 +91,7 @@
                 correo.style.display = 'block';
                 email.style.borderColor = 'red';
             }
-            
+
             if (flag1 && flag2 && flag3){ 
                 const id = localStorage.getItem('id')
                 const infoSave = {name:nombre.value,email:email.value,age:edad.value}
