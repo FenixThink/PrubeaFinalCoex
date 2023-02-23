@@ -1,10 +1,5 @@
-import {
-  sequelize
-} from '../../db/connection.js';
-import {
-  DataTypes,
-  Model
-} from "sequelize";
+import { sequelize } from '../../db/connection.js';
+import { DataTypes } from "sequelize";
 
 const User = sequelize.define('users', {
   // Model attributes are defined here
@@ -28,7 +23,6 @@ const User = sequelize.define('users', {
     allowNull: false
   }
 })
-
 class UserModel {
 
   static findAll = async () => {
@@ -36,69 +30,49 @@ class UserModel {
       const users = await User.findAll();
       return users;
     } catch (error) {
-      return res.status(500).json({
-        message: 'Something went wrong'
-      })
+      throw new Error(error.message);
     }
   }
 
   static findOne = async (id) => {
     try {
-      const user = await User.findOne({
-        where: {
-          id
-        }
-      });
-
+      const user = await User.findOne({ where: { id }})
       return user;
     } catch (error) {
-      return res.status(500).json({
-        message: 'Something went wrong'
-      })
+      throw new Error(error.message);
     }
   }
 
-  static create = async (name, email, age) => {
-
-    const user = await User.create({
-      name,
-      email,
-      age
-    })
-
-    return (user)
-  }
-
-  static update = async (id,name, email, age) => {
-
-    const query = (`UPDATE users SET name = '${name}', email = '${email}', age = '${age}' WHERE users. id = ${id}`)
-    const result = await User.sequelize.query(query,{raw:true})
-    return result;
-    // console.log(id)
-    // const user = await User.update({
-    //   name : name,
-    //   email : email,
-    //   age : age
-    // },{ where: { _id: id }} )
-    // return (user)
-  }
-
-  static deleteById = async (id) => {
+  static create = async (data) => {
     try {
-      const user = await User.destroy({
-        where: {
-          id
-        }
-      });
-
+      const user = await User.create(data);
       return user;
     } catch (error) {
-      return res.status(500).json({
-        message: 'Something went wrong'
-      })
+      throw new Error(`Failed to create user : ${error.message}`);
+    }
+  };
+
+  static update = async (id, data) => {
+    try {
+      console.log(id)
+      const user = await User.update(data, { where: { id }})
+      if (user[0] === 1) {
+        return `User with ${id} succesfully updated`
+      } else {
+        throw new Error(`User with ${id} not found`);
+      }
+    } catch (error) {
+      throw new Error(error.message);
+    }
+  }
+  static deleteById = async (id) => {
+    try {
+      const user = await User.destroy({ where: { id }})
+      return user;
+    } catch (error) {
+      throw new Error(error.message);
     }
   }
 }
-
 
 export default UserModel;
